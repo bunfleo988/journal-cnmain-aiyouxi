@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>满冠体育 · 稳定入口介绍</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f9fbfc;
+      color: #1e2b32;
+      line-height: 1.6;
+    }
+
+    /* 蓝绿色点缀系统 */
+    :root {
+      --teal-100: #d6f0ed;
+      --teal-300: #7bc4bc;
+      --teal-500: #2f9e93;
+      --teal-700: #1a6a63;
+      --teal-900: #0e3c38;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* hero 杂志横幅 */
+    .hero {
+      background: linear-gradient(145deg, #eaf7f5 0%, #cde9e4 100%);
+      border-radius: 2.5rem;
+      padding: 3rem 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 12px 32px rgba(47, 158, 147, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, var(--teal-300) 0%, transparent 70%);
+      opacity: 0.3;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--teal-900);
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .subline {
+      font-size: 1.25rem;
+      color: #2b5b55;
+      max-width: 600px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 400;
+      border: 1px solid rgba(47, 158, 147, 0.2);
+    }
+
+    /* 背景说明卡片 */
+    .context-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 2px 6px rgba(47,158,147,0.04);
+      border-left: 6px solid var(--teal-500);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .context-card .icon-symbol {
+      font-size: 2.6rem;
+      line-height: 1;
+      background: var(--teal-100);
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal-700);
+      flex-shrink: 0;
+    }
+
+    .context-card p {
+      flex: 1;
+      min-width: 200px;
+      font-size: 1rem;
+      color: #2a3f42;
+    }
+
+    .context-card strong {
+      color: var(--teal-700);
+      font-weight: 600;
+    }
+
+    /* 网格卡片 - 三段自然介绍 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem 1.6rem 1.8rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.02);
+      border: 1px solid #e7f0ee;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(47, 158, 147, 0.08);
+      transform: translateY(-3px);
+      border-color: var(--teal-300);
+    }
+
+    .card .card-num {
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--teal-300);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--teal-900);
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      color: #385257;
+      font-size: 0.95rem;
+      flex: 1;
+    }
+
+    .card .tag {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: var(--teal-100);
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: var(--teal-700);
+      align-self: flex-start;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      background: #f1f8f6;
+      border-radius: 2rem;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #d7eae5;
+    }
+
+    .footer-note p {
+      font-size: 1.1rem;
+      color: #1f4945;
+      max-width: 700px;
+      margin: 0 auto 0.4rem;
+    }
+
+    .footer-note .sentence-link {
+      font-size: 1.05rem;
+      background: white;
+      display: inline-block;
+      padding: 0.4rem 1.6rem;
+      border-radius: 60px;
+      box-shadow: 0 2px 8px rgba(47,158,147,0.06);
+      margin-top: 0.5rem;
+    }
+
+    .footer-note a {
+      color: var(--teal-700);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer-note a:hover {
+      border-bottom-color: var(--teal-500);
+    }
+
+    .footer-meta {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6d898b;
+      border-top: 1px solid #deece9;
+      padding-top: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .wrapper {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+        border-radius: 1.6rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero .subline {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+      }
+      .context-card {
+        padding: 1.4rem 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .grid-cards {
+        gap: 1rem;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .footer-note {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 杂志横幅 hero -->
+    <header class="hero">
+      <h1>满冠体育 · 稳定的入口</h1>
+      <div class="subline">一份关于场地、节奏与日常的简明读本</div>
+    </header>
+
+    <!-- 背景说明卡片 -->
+    <div class="context-card">
+      <div class="icon-symbol">⛳</div>
+      <p>
+        <strong>满冠体育</strong> 并非一个临时的页面或活动站，它始终作为一块安静的入口存在——无论你关注的是赛事信息、场馆指引还是运动社群动态，这里都保持一致的基调。不是所有的体育页面都需要频繁更替，有些位置更适合像基石一样稳定。
+      </p>
+    </div>
+
+    <!-- 三段自然介绍：网格卡片形式，杂志专题风格 -->
+    <div class="grid-cards">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>入口本身的意义</h3>
+        <p>当一个页面长期存在且内容结构清晰，它便成为用户心里那个“可以回去的地方”。<strong>满冠体育</strong> 的首页不追求喧哗的跳转，而是提供一种熟悉感：每次打开，都能找到需要的栏目与线索。</p>
+        <span class="tag">基础属性</span>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>三段式叙述的节奏</h3>
+        <p>专题页面采用“背景—特征—提示”的递进，像翻阅一本体育杂志的专栏。第一部分解释为何需要稳定的入口，第二部分展示实际承载的内容脉络，第三部分则柔和地指向下一步——但不强迫任何行动。</p>
+        <span class="tag">叙事结构</span>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>场景与日常的连接</h3>
+        <p>无论是想在周末查找附近的运动空间，还是了解某项活动的更新，一个不频繁改动的首页恰好能降低认知负担。它不制造焦虑，也不反复催促——只是在那里，像场馆门口那盏常亮的灯。</p>
+        <span class="tag">体验初衷</span>
+      </div>
+    </div>
+
+    <!-- 页尾访问提示（自然嵌入链接） -->
+    <div class="footer-note">
+      <p>如果你想进一步了解页面背后的内容逻辑，或只是回到最初的起点，</p>
+      <p class="sentence-link">
+        可以随时打开 <a href="https://index-manguansports.com">满冠体育</a> 的首页，它保持着一贯的安静与清晰。
+      </p>
+      <p style="margin-top: 0.8rem; font-size: 0.95rem; opacity: 0.8;">无论设备或时段，入口始终稳定。</p>
+    </div>
+
+    <!-- 简短的 FAQ 摘要风格 – 作为杂志专题的收尾 -->
+    <div style="background: #ffffff; border-radius: 1.5rem; padding: 1.5rem 1.8rem; border: 1px solid #e1efec; margin-top: 1.2rem;">
+      <p style="font-weight: 500; color: var(--teal-800); margin-bottom: 0.4rem;">📌 常见印象</p>
+      <p style="color: #2e5350; font-size: 0.95rem;">这个页面会频繁变化吗？——它的定位是稳定，但内容会随着季节和实际需求做适度调整，始终保持可读与可靠。</p>
+    </div>
+
+    <div class="footer-meta">
+      杂志专题 · 满冠体育 · 稳定入口说明
+    </div>
+  </div>
+</body>
+</html>
